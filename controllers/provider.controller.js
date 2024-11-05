@@ -1,6 +1,6 @@
 const providerService = require('../services/provider.service');
 
-
+// Obtener Provedores
 const obtenerProvedores = async (req, res) => {
     try {
         const usuarios = await providerService.obtenerTodosLosProvedores();
@@ -10,6 +10,7 @@ const obtenerProvedores = async (req, res) => {
     }
 };
 
+// Obtener Provedor
 const obtenerProvedor = async (req, res) => {
     try {
         const usuario = await providerService.obtenerProvedorPorId(req.params.id);
@@ -23,6 +24,7 @@ const obtenerProvedor = async (req, res) => {
     }
 };
 
+// Crear Provedor
 const crearProvedor = async (req, res) => {
     try {
         const nuevoProveedor = await providerService.crearProvedor(req.body);
@@ -35,6 +37,7 @@ const crearProvedor = async (req, res) => {
     }
 };
 
+// UpDate Provedor
 const actualizarProvedor = async (req, res) => {
     try {
         const proveedorActualizado = await providerService.actualizarProvedor(req.params.id, req.body);
@@ -51,6 +54,7 @@ const actualizarProvedor = async (req, res) => {
     }
 };
 
+// Delete
 const eliminarProvedor = async (req, res) => {
     try {
         const proveedor = await providerService.eliminarProvedor(req.params.id);
